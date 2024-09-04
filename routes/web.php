@@ -40,7 +40,6 @@ Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->mi
     
 Route::controller(ProfileController::class)->prefix('admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('profile/edit', 'edit')->name('profile.add');
-    Route::post('profile.edit', 'update')->name('profile.create');
     Route::post('profile/edit', 'update')->name('profile.update');
 });
 Auth::routes();
