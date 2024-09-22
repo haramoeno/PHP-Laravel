@@ -46,15 +46,15 @@ class ProfileController extends Controller
     {
         
         
-        $this->validate($request, News::$rules);
+        $this->validate($request, Profile::$rules);
         
-        $news = News::find($request->id);
+        $profile = Profile::find($request->id);
         
-        $news_form = $request->all();
-        unset($news_form['_token']);
+        $profile_form = $request->all();
+        unset($profile_form['_token']);
 
 
-        $news->fill($news_form)->save();
+        $profile->fill($profile_form)->save();
         
         return redirect('admin/profile/edit');
     }
