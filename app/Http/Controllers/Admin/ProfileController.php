@@ -15,7 +15,7 @@ class ProfileController extends Controller
         return view('admin.profile.create');
     }
     
-    public function create()
+    public function create(Request $request)
     {
         
         
@@ -27,8 +27,8 @@ class ProfileController extends Controller
         
         unset($form['token']);
         
-        $profiles->fill($form);
-        $profiles->save();
+        $profile->fill($form);
+        $profile->save();
         return redirect('admin/profile/create');
     }
     
